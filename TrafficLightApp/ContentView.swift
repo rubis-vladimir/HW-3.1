@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var currentColorId = 3
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Spacer()
+            
+            TrafficLight(currentColorId: self.$currentColorId)
+                .padding(.bottom, 60.0)
+            
+            CustomButton(currentColorId: self.$currentColorId)
+            
+            Spacer()
+        }
     }
 }
 
